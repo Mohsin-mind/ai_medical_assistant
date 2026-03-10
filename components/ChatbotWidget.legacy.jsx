@@ -14,6 +14,7 @@ export default function ChatbotWidget() {
       currentSession = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).substring(7);
       localStorage.setItem("ai_medical_session", currentSession);
     }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSessionId(currentSession);
   }, []);
 
