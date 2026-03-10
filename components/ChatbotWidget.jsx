@@ -220,7 +220,7 @@ function Chatbot({ sessionId, onSessionChange }) {
                 <ChatEventAddon className="justify-center">
                   <ChatEventAvatar
                     fallback={<User className="size-4" />}
-                    className="bg-primary text-primary-foreground size-8"
+                    className="text-primary-foreground size-8"
                   />
                 </ChatEventAddon>
               )}
