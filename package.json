@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
+    "groq-sdk": "^0.37.0",
     "lucide-react": "^0.577.0",
     "next": "16.1.6",
+    "openai": "^6.27.0",
     "react": "19.2.3",
     "react-chatbotify": "^2.5.0",
     "react-dom": "19.2.3"
