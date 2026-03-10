@@ -136,7 +136,7 @@ export async function generateWithGroq(message, sessionId) {
 }
 
 export async function generateAIResponse(message, sessionId) {
-  const provider = process.env.AI_PROVIDER || PROVIDERS.GOOGLE;
+  const provider = process.env.AI_PROVIDER;
 
   try {
     if (provider === PROVIDERS.GOOGLE) {

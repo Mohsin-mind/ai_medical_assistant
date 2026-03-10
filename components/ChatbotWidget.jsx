@@ -121,7 +121,7 @@ function Chatbot({ sessionId, onSessionChange }) {
       ? crypto.randomUUID()
       : Math.random().toString(36).substring(7);
     localStorage.setItem("ai_medical_session", newSession);
-    
+
     // Changing the session ID unmounts this Chatbot and remounts a new one with the new ID,
     // which automatically resets the messages explicitly.
     onSessionChange(newSession);
@@ -134,7 +134,7 @@ function Chatbot({ sessionId, onSessionChange }) {
         <ChatHeaderAddon>
           <ChatHeaderAvatar
             fallback={<Stethoscope className="size-4" />}
-            className="bg-primary text-primary-foreground size-9"
+            className="text-primary-foreground size-9"
           />
         </ChatHeaderAddon>
 
@@ -185,7 +185,7 @@ function Chatbot({ sessionId, onSessionChange }) {
         {[...messages].reverse().map((msg) => {
           const isUser = msg.role === "user";
           const text = getMessageText(msg);
-          
+
           return (
             <ChatEvent key={msg.id} className="py-1">
               {!isUser && (
@@ -205,11 +205,10 @@ function Chatbot({ sessionId, onSessionChange }) {
                 </ChatEventTitle>
 
                 <ChatEventContent
-                  className={`mt-0.5 max-w-[85%] rounded-xl px-3 py-2 text-sm leading-relaxed ${
-                    isUser
-                      ? "bg-primary text-primary-foreground rounded-tr-sm"
-                      : "bg-muted text-foreground rounded-tl-sm"
-                  }`}
+                  className={`mt-0.5 max-w-[85%] rounded-xl px-3 py-2 text-sm leading-relaxed ${isUser
+                    ? "bg-primary text-primary-foreground rounded-tr-sm"
+                    : "bg-muted text-foreground rounded-tl-sm"
+                    }`}
                 >
                   <div className="prose prose-sm dark:prose-invert max-w-none [&>*:first-child]:mt-0 [&>*:last-child]:mb-0">
                     <ReactMarkdown>{text}</ReactMarkdown>
